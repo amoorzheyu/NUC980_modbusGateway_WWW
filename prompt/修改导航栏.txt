@@ -1,0 +1,12 @@
+下面是我的导航栏代码
+```
+<!-- 导航栏 -->
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background-color: #e3f2fd;">
+    <li class="nav-item" role="presentation" v-for="(menu_item, index) in menus">
+        <a class="text-nowrap nav-link" :class="{active: index === 0}" :aria-selected="index === 0 ? 'true' : 'false'" :id="menu_item.name + '-tab'" data-bs-toggle="pill" :href="'#' + menu_item.name" role="tab" :aria-controls="menu_item.name">
+            {{menu_item.name}}
+        </a>
+    </li>
+</ul>
+```
+改成符合vue3 router-link的形式

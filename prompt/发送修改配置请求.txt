@@ -1,0 +1,43 @@
+下面是我在vue3中使用vuex的actions的代码
+```
+actions: {
+    //保存配置
+        async setConfig({
+            commit
+        }) {
+            try {
+                const response = await fetch('/api/setConfig', {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                    body:state.deviceConfig
+                });
+                const data = await response.json();
+            } catch (error) {
+                console.error(error);
+            }
+        },
+    },
+```
+如何将响应data返回回去
+
+
+下面是我view.vue的代码
+```
+<button type="button" class="btn btn-warning w-25" onclick="setConfig()">保存</button>
+...
+methods: {
+        setConfig() {
+            this.$store.dispatch('setConfig', {
+                callback: (data) => {
+                    console.log(data); // 输出响应数据
+                },
+            });
+        }
+    },
+```
+可是当按下这个button的时候，我的console打印输出以下内容
+"Uncaught ReferenceError: setConfig is not defined"
+请帮我修改代码

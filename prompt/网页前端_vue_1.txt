@@ -1,0 +1,30 @@
+我正在使用Bootstrap和Vue3构建项目前端，下面是我的菜单数据结构:
+```
+data() {
+    return {
+        menus: [{
+            name: "概述"
+        }, {
+            name: "基本设置"
+        }, {
+            name: "设备配网"
+        }, {
+            name: "串口通道"
+        }, {
+            name: "远程通道"
+        }, {
+            name: "网关通道"
+        }, {
+            name: "通道编程"
+        }, ]
+    }
+}
+```
+请帮我把下面的代码补充完整,注意用`name`替换掉`id` `href` `aria-controls`
+```
+<li class="nav-item" role="presentation" v-for="menu_item in menus">
+                <a class="text-nowrap nav-link active" id="home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">{{menu_item.name}}</a>
+            </li>
+```
+
+另外我希望只有第一个选项才能有`active` `aria-selected="true"`，从第二个选项开始不要有`active`，且`aria-selected="false"`

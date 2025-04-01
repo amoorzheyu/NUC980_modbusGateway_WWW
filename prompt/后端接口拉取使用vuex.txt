@@ -1,0 +1,60 @@
+vue3 如何更好地使用vuex里面的mutations，我在mutations里面有个getConfig()函数，需要在页面加载时执行，用于获取远程服务器的json，然后本地渲染页面
+
+下面是我的真实代码，你可以帮我优化或者修复可能存在的问题吗：mutations: {
+        //获取设备全局配置
+        getConfig(state) {
+            return new Promise((resolve, reject) => {
+                //清空配置列表
+                this.state.deviceConfig = {};
+                //获取设备配置
+                const data = null;
+
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+
+                xhr.addEventListener("readystatechange", function() {
+                    if (this.readyState === this.DONE) {
+                        deviceConfig = this.responseText;
+                    }
+                });
+
+                xhr.open("POST", "/api/getConfig");
+                xhr.setRequestHeader("Accept", "text/plain, */*");
+                xhr.send(data);
+            })
+        },
+    },
+
+我该如何在我的views使用，注意要在页面加载时调用，以便在获取json数据后渲染页面
+
+下面是我的json，我想在渲染的时候翻译一下key
+```
+"device_name": "smartGateway",
+"device_FW_Ver": "1.0.0",
+"device_MAC": "32:D4:13:68:00:82",
+"device_DHCP": 1,
+"device_IPv4": "192.168.31.221",
+"device_IPv4_mask": "255.255.255.0",
+"device_IPv4_gateway": "192.168.31.1",
+"device_IPv4_DNS": "192.168.31.1",
+"serial_count": 8,
+"remote_count": 8,
+"gateway_count": 2,
+"scanCMD_count": 8
+```
+下面是翻译后的key
+```
+设备名称
+设备固件版本
+设备MAC
+设备DHCP状态
+设备IPv4地址
+设备IPv4掩码
+设备IPv4网关
+设备IPv4 DNS服务器
+串口通道数量
+远程通道数量
+网关通道数量
+通道编程容量
+```
+我希望在computed: deviceConfig()时对上面的json进行翻译转换
