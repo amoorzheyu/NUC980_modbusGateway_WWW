@@ -180,7 +180,8 @@ export default {
                 "modbusAddress": "In RTU Slave Mode, this serial port will serve as a slave device that can be polled by the upper computer device, requiring a Modbus address to be set",
                 "devicePort": "Set the network communication port for the device",
                 "remoteAddress": "Set the IP address for remote communication, only valid in TCP client mode",
-                "remotePort": "Set the port number for remote communication, only valid in TCP client mode"
+                "remotePort": "Set the port number for remote communication, only valid in TCP client mode",
+                "add": "Add a new line",
             }
         },
         "item": {
@@ -191,7 +192,8 @@ export default {
             "tcpServer": "TCP Server",
             "tcpClient": "TCP Client",
             "udp": "UDP",
-            "delete": "Delete"
+            "delete": "Delete",
+            "add": "Add"
         },
         "bottom": {
             "add": "Add",

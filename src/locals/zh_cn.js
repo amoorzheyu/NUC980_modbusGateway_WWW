@@ -180,6 +180,7 @@ export default {
 				"devicePort": "设置设备的网络通信端口",
 				"remoteAddress": "设置远程通信的IP地址，仅在TCP客户端模式下有效",
 				"remotePort": "设置远程通信的端口号，仅在TCP客户端模式下有效",
+				"add": "在当前行下一行添加一个新行",
 			}
 		},
 		"item": {
@@ -190,7 +191,8 @@ export default {
 			"tcpServer": "TCP服务器",
 			"tcpClient": "TCP客户端",
 			"udp": "UDP",
-			"delete": "删除"
+			"delete": "删除",
+			"add": "添加"
 		},
 		"bottom": {
 			"add": "添加",
