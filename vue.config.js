@@ -9,7 +9,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       "/api": { // “/api” 以及前置字符串会被替换为真正域名
-        target: "http://192.168.3.240:80", // 请求域名
+        target: "http://192.168.3.30:80", // 请求域名
         secure: false, // 请求是否为https
         changeOrigin: true, // 是否跨域
         ws: true,

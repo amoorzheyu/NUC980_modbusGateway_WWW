@@ -143,7 +143,7 @@
                 <li class="list-group-item">
                     <div class="row justify-content-between">
                         <span class=" col-sm-6 fw-bold">{{ $t('general.programUpdate.frontendVersionLabel') }}</span>
-                        <span class=" col-sm-6 text-sm-end">2025/2/10-A</span>
+                        <span class=" col-sm-6 text-sm-end">2025/4/11</span>
                     </div>
                 </li>
                 <li class="list-group-item">
